@@ -28,7 +28,7 @@ From anywhere else, a git dependency:
 ```yaml
   vita_debug_strip:
     git:
-      url: https://github.com/flutter-vita/packages.git
+      url: https://github.com/flutter-vita/flutter-vita-packages.git
       path: vita_debug_strip
 ```
 

@@ -1,8 +1,8 @@
 name: vita_file_browser
 description: A file browser drawn in Flutter, for a console with no file-chooser dialog.
 version: 0.1.0
-repository: https://github.com/flutter-vita/packages/tree/master/vita_file_browser
-issue_tracker: https://github.com/flutter-vita/packages/issues
+repository: https://github.com/flutter-vita/flutter-vita-packages/tree/master/vita_file_browser
+issue_tracker: https://github.com/flutter-vita/flutter-vita-packages/issues
 publish_to: none
 
 environment:
