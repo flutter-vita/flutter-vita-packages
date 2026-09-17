@@ -1,6 +1,8 @@
 name: vita_debug_strip
 description: The gallery's strip of live console numbers, for any app; a button chord shows and hides it.
 version: 0.1.0
+repository: https://github.com/flutter-vita/packages/tree/master/vita_debug_strip
+issue_tracker: https://github.com/flutter-vita/packages/issues
 publish_to: none
 
 environment:
