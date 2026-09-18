@@ -3,7 +3,7 @@
 Pub packages of the [flutter-vita](https://github.com/flutter-vita/flutter-vita)
 project with an API of their own, one directory each. The Vita
 *implementations* of upstream plugins (`path_provider_vita`,
-`audioplayers_vita` and the rest) are not here; they live in the tool's
+`audioplayers_vita` and the rest) are not here. They are in the tool's
 [`plugins/`](https://github.com/flutter-vita/flutter-vita/tree/master/plugins).
 
 | Package | What it is |
@@ -14,9 +14,9 @@ project with an API of their own, one directory each. The Vita
 
 ## Using one
 
-Path dependencies today; publishing to pub.dev is planned and the names
-stay. The tool carries this repository as a git submodule at `packages/`,
-so from an app inside the tool's tree:
+Path dependencies today. Publication to pub.dev is planned. The names stay.
+The tool carries this repository as a git submodule at `packages/`, so an
+app inside the tool's tree writes:
 
 ```yaml
 dependencies:
@@ -35,8 +35,8 @@ From anywhere else, a git dependency:
 
 ## Versions
 
-Plain semver per package, `0.1.0` today, and `flutter: ">=3.44.0"`. A
-package's tag, when it is published, is `<name>-v<version>`.
+Plain semver per package, `0.1.0` today, and `flutter: ">=3.44.0"`. When a
+package is published, its tag is `<name>-v<version>`.
 
 ## Licence
 
