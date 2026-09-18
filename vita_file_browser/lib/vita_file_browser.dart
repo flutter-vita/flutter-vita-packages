@@ -4,6 +4,7 @@ import 'src/file_browser.dart';
 import 'src/root_navigator.dart';
 
 export 'src/file_browser.dart' show FileBrowserMode;
+export 'src/root_navigator.dart' show findRootNavigator;
 export 'src/vita_paths.dart' show VitaPaths;
 
 /// A file browser for a console that has no file-chooser dialog to call.

@@ -21,6 +21,8 @@ abstract final class VitaButtons {
   static const int cross = 0x004000;
   static const int square = 0x008000;
 
+  static const int directions = up | right | down | left;
+
   static String describe(int mask) {
     const names = {
       select: 'SELECT',
@@ -51,6 +53,14 @@ class VitaPadState {
   bool pressed(int mask) => buttons & mask == mask;
 }
 
+/// One navigation event: the buttons that went down (the left stick counts
+/// as the D-pad, with key repeat while it stays tilted) and the state then.
+class VitaNavEvent {
+  const VitaNavEvent(this.pressed, this.buttons);
+  final int pressed;
+  final int buttons;
+}
+
 /// The controller over `vita/pad` (the package's C half).
 abstract final class VitaPad {
   static const _channel = MethodChannel('vita/pad', JSONMethodCodec());
@@ -74,6 +84,18 @@ abstract final class VitaPad {
     return r?['pressed'] == true;
   }
 
+  /// The next navigation event, or null after [timeout].
+  static Future<VitaNavEvent?> waitNav({
+    Duration timeout = const Duration(seconds: 14),
+  }) async {
+    final r = await _channel.invokeMethod<Map<Object?, Object?>>('waitNav', {
+      'ms': timeout.inMilliseconds,
+    });
+    final pressed = (r?['pressed'] as num?)?.toInt() ?? 0;
+    if (pressed == 0) return null;
+    return VitaNavEvent(pressed, (r?['buttons'] as num?)?.toInt() ?? 0);
+  }
+
   /// Every press of [mask], for as long as someone listens.
   static Stream<void> chord(int mask) {
     late final StreamController<void> c;
@@ -92,6 +114,33 @@ abstract final class VitaPad {
     }
 
     c = StreamController<void>.broadcast(
+      onListen: () {
+        on = true;
+        loop();
+      },
+      onCancel: () => on = false,
+    );
+    return c.stream;
+  }
+
+  /// Every navigation event, for as long as someone listens.
+  static Stream<VitaNavEvent> nav() {
+    late final StreamController<VitaNavEvent> c;
+    var on = false;
+    Future<void> loop() async {
+      while (on) {
+        try {
+          final e = await waitNav();
+          if (e != null && on) c.add(e);
+        } on MissingPluginException {
+          return;
+        } on PlatformException {
+          await Future<void>.delayed(const Duration(seconds: 1));
+        }
+      }
+    }
+
+    c = StreamController<VitaNavEvent>.broadcast(
       onListen: () {
         on = true;
         loop();

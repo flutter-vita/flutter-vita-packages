@@ -8,7 +8,8 @@ project with an API of their own, one directory each. The Vita
 
 | Package | What it is |
 |---|---|
-| `vita_debug_strip` | The strip of live console numbers as a widget, for an app that wants the UI thread's time on screen beside the engine's own strip. Its C half sets the engine's strip to start hidden, so the two do not overlap; L+R+SELECT brings the engine's back. |
+| `flutter_vita` | One call in `main()` sets the app up for the console: pad navigation or a cursor, the rear panel as a trackpad, the pixel ratio, the debug strip, the clocks, what exit does, and Dart fallbacks for `share_plus`, `url_launcher` and `image_picker`. Its C half is the controller channel `vita/pad`. |
+| `vita_debug_strip` | The strip of live console numbers as a widget, for an app that wants the UI thread's time on screen beside the engine's own strip. It depends on `flutter_vita`, whose C half starts the engine's strip hidden so the two do not overlap; L+R+SELECT brings the engine's back. |
 | `vita_file_browser` | A file browser drawn in Flutter, for a console with no file-chooser dialog. `file_picker_vita` and `file_selector_vita` open it. |
 
 ## Using one

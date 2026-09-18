@@ -12,3 +12,5 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_vita:
+    path: ../flutter_vita

@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/widgets.dart';
 
-import 'pad.dart';
+import 'package:flutter_vita/flutter_vita.dart';
 import 'strip.dart';
 
 /// The strip over any app, shown and hidden with a button chord.
@@ -16,11 +16,11 @@ import 'strip.dart';
 ///     MaterialApp(builder: (context, child) => VitaDebugOverlay(child: child!))
 ///
 /// L + R + TRIANGLE toggles it (the [hotkey]). Not L + R + SELECT: that is
-/// the engine's own debug HUD, the box every debug build draws in the
-/// top-right corner, which this package starts hidden (its C half defines
-/// `flutter_vita_debug_overlay = 2`) so the two do not overlap. The chord is
-/// watched by one thread on the console (`vita/pad`, the package's C half),
-/// not by a Dart timer, so a hidden strip costs the app nothing.
+/// the engine's own debug strip, which `flutter_vita`'s C half starts
+/// hidden (`flutter_vita_debug_overlay = 2`) so the two do not overlap. The
+/// chord is watched by one thread on the console (`vita/pad`, from
+/// `flutter_vita`), not by a Dart timer, so a hidden strip costs the app
+/// nothing.
 ///
 /// [inset] lays the app out under the strip instead of drawing the strip
 /// over its top 34 px; the app relayouts on each toggle.
