@@ -9,7 +9,7 @@ import '../ui.dart';
 /// text or a file to. What it has is the memory card. Text and files go to
 /// `ux0:data/<title id>/shared/`, a toast says so, and the plugin gets the
 /// success it expects. The user copies the file off with VitaShell or the
-/// receiver's FILES tab.
+/// bridge's FILES tab.
 class ShareFallback {
   ShareFallback(this.titleId);
   final String titleId;

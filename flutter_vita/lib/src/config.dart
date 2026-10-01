@@ -56,10 +56,10 @@ enum CpuClock {
 
 /// What `SystemNavigator.pop()` and `exitApplication` do.
 enum ExitBehaviour {
-  /// The receiver in a debug build, the LiveArea in a release build.
+  /// The bridge in a debug build, the LiveArea in a release build.
   auto,
 
-  /// Hand the console to the receiver (debug builds; a release build leaves).
+  /// Hand the console to the bridge (debug builds; a release build leaves).
   handoff,
 
   /// Leave to the LiveArea.

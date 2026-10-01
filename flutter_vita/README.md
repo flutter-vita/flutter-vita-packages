@@ -32,12 +32,12 @@ registers it.
 |---|---|---|
 | `debugStrip` | `shortcut` (default), `always`, `hidden` | The engine's debug strip in a debug build. `shortcut`: hidden until L+R+SELECT. A release build never draws it. |
 | `keepAwake` | `true` (default), `false` | Stop the console's screen dimmer and sleep while the app runs. |
-| `watchdog` | `true` (default), `false` | The stall watchdog that hands the console to the receiver after a long stall. |
+| `watchdog` | `true` (default), `false` | The stall watchdog that hands the console to the bridge after a long stall. |
 | `pixelRatio` | 0.5 to 3.0, default 1.0 | Flutter's device pixel ratio. 960x544 physical pixels stay. At 1.5 the app lays out for 640x362 logical pixels, and text and buttons become larger. |
 | `pad` | `none` (default), `focus`, `cursor` | `focus`: the D-pad and the left stick move Flutter's focus, X activates, O dismisses or goes back. `cursor`: the left stick moves an arrow and X presses. The embedder draws the arrow. |
 | `rearTouch` | `none` (default), `scroll` | `scroll`: a finger on the rear panel scrolls the widget under the last front touch, or under the cursor. |
 | `cpuClock` | `normal` (default), `high` | `high`: 444 MHz CPU, with the bus and the GPU raised to match. More frames, less battery. |
-| `onExit` | `auto` (default), `handoff`, `exit`, `ignore` | What `SystemNavigator.pop()` and `System.exitApplication` do. `auto` is `handoff` in a debug build and `exit` in a release build. `handoff` gives the console to the receiver. `exit` goes to the LiveArea. |
+| `onExit` | `auto` (default), `handoff`, `exit`, `ignore` | What `SystemNavigator.pop()` and `System.exitApplication` do. `auto` is `handoff` in a debug build and `exit` in a release build. `handoff` gives the console to the bridge. `exit` goes to the LiveArea. |
 | `psButton` | `system` (default), `locked` | `locked`: the PS button does nothing while the app runs. The lock ends with the process. |
 | `fallbacks` | a set of `share`, `urlLauncher`, `imagePicker` | Answers for phone plugins that have no Vita side. See below. |
 
