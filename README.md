@@ -4,7 +4,7 @@ Pub packages of the [flutter-vita](https://github.com/flutter-vita/flutter-vita)
 project with an API of their own, one directory each. The Vita
 *implementations* of upstream plugins (`path_provider_vita`,
 `audioplayers_vita` and the rest) are not here. They are in the tool's
-[`plugins/`](https://github.com/flutter-vita/flutter-vita/tree/master/plugins).
+[`plugins/`](https://github.com/flutter-vita/flutter-vita/tree/main/plugins).
 
 | Package | What it is |
 |---|---|

@@ -1,7 +1,7 @@
 name: flutter_vita
 description: Set up a Flutter app for the PlayStation Vita from one call, with pad navigation, a cursor, the rear-panel trackpad, layout density and fallbacks for plugins the console has no side for.
 version: 0.1.0
-repository: https://github.com/flutter-vita/flutter-vita-packages/tree/master/flutter_vita
+repository: https://github.com/flutter-vita/flutter-vita-packages/tree/main/flutter_vita
 issue_tracker: https://github.com/flutter-vita/flutter-vita-packages/issues
 publish_to: none
 
