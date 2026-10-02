@@ -86,7 +86,7 @@ does not poll the channel.
 A build decides these, not a call: the title id, the LiveArea assets, the
 heap size, and `--release` (no dev server, no debug strip). They are in the
 pubspec's `vita:` block and in the `flutter-vita build` flags. See the tool's
-[release-app.md](https://github.com/flutter-vita/flutter-vita/blob/main/docs/release-app.md).
+[release-app.md](https://github.com/flutter-vita/flutter-vita/blob/master/docs/release-app.md).
 
 ## Requirements
 
