@@ -40,4 +40,5 @@ package is published, its tag is `<name>-v<version>`.
 
 ## Licence
 
-BSD 3-Clause, see [LICENSE](LICENSE).
+zlib, see [LICENSE](LICENSE). A `.vpk` that contains these packages does
+not have to carry the notice.
