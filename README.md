@@ -14,9 +14,14 @@ project with an API of their own, one directory each. The Vita
 
 ## Using one
 
-Path dependencies today. Publication to pub.dev is planned. The names stay.
-The tool carries this repository as a git submodule at `packages/`, so an
-app inside the tool's tree writes:
+`flutter_vita` and `vita_file_browser` are on pub.dev:
+
+```sh
+flutter pub add flutter_vita
+```
+
+`vita_debug_strip` is not published. The tool carries this repository as a
+git submodule at `packages/`, so an app inside the tool's tree writes:
 
 ```yaml
 dependencies:
