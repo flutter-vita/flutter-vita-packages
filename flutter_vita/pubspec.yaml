@@ -3,7 +3,6 @@ description: Set up a Flutter app for the PlayStation Vita from one call, with p
 version: 0.1.0
 repository: https://github.com/flutter-vita/flutter-vita-packages/tree/master/flutter_vita
 issue_tracker: https://github.com/flutter-vita/flutter-vita-packages/issues
-publish_to: none
 
 environment:
   sdk: ^3.5.0
@@ -12,5 +11,4 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  vita_file_browser:
-    path: ../vita_file_browser
+  vita_file_browser: ^0.1.0
