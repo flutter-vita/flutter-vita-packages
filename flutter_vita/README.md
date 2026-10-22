@@ -26,6 +26,24 @@ The package talks to the embedder on the channel `vita/config`. The tool
 compiles the package's C half (`vita/pad.c`) into the app. No app code
 registers it.
 
+## Is this the console?
+
+The console runs Dart's Linux build. `Platform.isLinux` and
+`TargetPlatform.linux` are true there too. Check `FlutterVita.isPSVita`
+before you take a Linux path:
+
+```dart
+import 'dart:io';
+
+import 'package:flutter_vita/flutter_vita.dart';
+
+String platformName() {
+  if (FlutterVita.isPSVita) return 'PS Vita'; // check this first
+  if (Platform.isLinux) return 'Linux';
+  return Platform.operatingSystem;
+}
+```
+
 ## What you can set
 
 | Argument | Values | Effect |

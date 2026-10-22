@@ -1,5 +1,7 @@
 import 'dart:async';
+import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
@@ -145,6 +147,14 @@ abstract final class FlutterVita {
   static const _channel = MethodChannel('vita/config', JSONMethodCodec());
   static VitaInfo? _info;
   static final Set<Fallback> _fallbacks = {};
+
+  /// True on the PlayStation Vita. The console runs Dart's Linux build, so
+  /// `Platform.isLinux` and `TargetPlatform.linux` are true there too: check
+  /// this before you take a Linux path. The app's script is in `app0:`, the
+  /// title's own install folder, which only the console has.
+  static bool get isPSVita => _isPSVita;
+  static final bool _isPSVita =
+      !kIsWeb && Platform.isLinux && Platform.script.toString().startsWith('app0');
 
   static Future<void> configure({
     DebugStrip? debugStrip,
