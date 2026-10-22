@@ -1,9 +1,14 @@
 # vita_file_browser
 
-A file browser drawn in Flutter, for the PlayStation Vita. The console has
-no file-chooser dialog: no Intent, no document picker, no portal. This
-package pushes a browser route onto the app's own Navigator, in the app's
-theme, and returns paths.
+A helper package for PS Vita support in a Flutter app: a file browser for
+the PlayStation Vita. It works with
+[flutter-vita](https://github.com/flutter-vita/flutter-vita), the tool that
+builds Flutter apps for the console.
+
+The console has no file-chooser dialog: no Intent, no document picker, no
+portal. This package pushes a browser route onto the app's own Navigator,
+in the app's theme, and returns paths. `flutter_vita`, `file_picker_vita`
+and `file_selector_vita` open it.
 
 ## Use
 

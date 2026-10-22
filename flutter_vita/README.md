@@ -1,7 +1,18 @@
 # flutter_vita
 
-One call at start-up. After it, a Flutter app behaves like a console app on
-the PlayStation Vita.
+A helper package that adds PS Vita support to a Flutter app. It works with
+[flutter-vita](https://github.com/flutter-vita/flutter-vita), the tool that
+builds Flutter apps for the PlayStation Vita. Install the tool first.
+
+The package gives you:
+
+- `FlutterVita.configure`: one call before `runApp` sets how the app works
+  on the console. The pad, the rear touch panel, the pixel ratio, the clocks
+  and more.
+- `FlutterVita.isPSVita`: true on the console. The console runs Dart's Linux
+  build, so `Platform.isLinux` is true there too.
+
+On other platforms the package does nothing, so the same code runs there.
 
 ```dart
 import 'package:flutter_vita/flutter_vita.dart';
@@ -19,8 +30,7 @@ void main() async {
 ```
 
 Each argument is optional. Each call is a delta: a later
-`configure(pad: PadMode.cursor)` changes the pad and nothing else. On a
-desktop or a phone, each call does nothing. The same `main` runs there.
+`configure(pad: PadMode.cursor)` changes the pad and nothing else.
 
 The package talks to the embedder on the channel `vita/config`. The tool
 compiles the package's C half (`vita/pad.c`) into the app. No app code
